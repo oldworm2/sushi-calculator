@@ -137,21 +137,21 @@ const TitleBar = (props) => (
 const SushiCalculator = (props) => (
   <Grid direction="row" container justify="center" spacing={24} style={{margin: 10}}>
     <Grid  xs={12} item>
-      <Typography variant="h4">Total : {props.total.count} Price : {props.total.amount.toFixed(2)}</Typography>
+      <Typography variant="h4" >Total : {props.total.count} Price : {props.total.amount.toFixed(2)}</Typography>
       <Button onClick={() => props.reset()} variant="outlined" >
         Reset
       </Button>
     </Grid>
     {props.menus.map( (menu, index) => (
     <Grid key={index} item xs={6} md={4} lg={3}>
-        <Card style={{width:190}}>
+        <Card >
           <CardActionArea>
             <CardContent>
               <Grid direction="row" justify="center" container spacing={24}>
   
                 <Grid item >
                   <IconButton aria-label="Cart">
-                    <Badge badgeContent={menu.count} color="primary">
+                    <Badge badgeContent={menu.count} color={menu.count === 0?'primary':'secondary'}>
                       <ShoppingCartIcon />
                     </Badge>
                   </IconButton>
