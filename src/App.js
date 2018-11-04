@@ -13,7 +13,6 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import Paper from '@material-ui/core/Paper';
 
 
 class App extends Component {
@@ -116,7 +115,6 @@ class App extends Component {
             reset={this.reset.bind(this)}
           />  
         </main>
-
       </div>
     );
   }
@@ -136,7 +134,7 @@ const TitleBar = (props) => (
 
 const SushiCalculator = (props) => (
   <Grid direction="row" container justify="center" spacing={24} style={{margin: 10}}>
-    <Grid  xs={12} item>
+    <Grid xs={12} item>
       <Typography variant="h4" >Total : {props.total.count} Price : {props.total.amount.toFixed(2)}</Typography>
       <Button onClick={() => props.reset()} variant="outlined" >
         Reset
@@ -145,7 +143,7 @@ const SushiCalculator = (props) => (
     {props.menus.map( (menu, index) => (
     <Grid key={index} item xs={6} md={4} lg={3}>
         <Card >
-          <CardActionArea>
+          <CardActionArea onClick={() => props.add(index)}>
             <CardContent>
               <Grid direction="row" justify="center" container spacing={24}>
   
