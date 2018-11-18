@@ -141,7 +141,7 @@ const SushiCalculator = (props) => (
       </Button>
     </Grid>
     {props.menus.map( (menu, index) => (
-    <Grid key={index} item xs={6} md={4} lg={3}>
+    <Grid key={index} item xs={12} sm={6} md={4} lg={3}>
         <Card >
           <CardActionArea onClick={() => props.add(index)}>
             <CardContent>
