@@ -133,7 +133,7 @@ const TitleBar = (props) => (
 );
 
 const SushiCalculator = (props) => (
-  <Grid direction="row" container justify="center" spacing={24} style={{margin: 10}}>
+  <Grid direction="row" container justify="center" spacing={24} style={{padding: 10, width: '100%', margin: 'auto'}}>
     <Grid xs={12} item>
       <Typography variant="h4" >Total : {props.total.count} Price : {props.total.amount.toFixed(2)}</Typography>
       <Button onClick={() => props.reset()} variant="outlined" >
